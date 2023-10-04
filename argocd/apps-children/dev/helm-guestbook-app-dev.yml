@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: helm-guestbook-app-dev
-  namespace: argocd
+  namespace: openshift-gitops
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -12,7 +12,7 @@ spec:
   project: appbundle-project-dev
   source:
     path: kustomized_helm/overlays/dev
-    repoURL: https://github.com/d0-labs/argocd-app-of-apps-child-guestbook
+    repoURL: https://github.com/AkshitaBhatnagar/argocd-app-of-apps-child-guestbook
     targetRevision: HEAD
     plugin:
       name: kustomized-helm
